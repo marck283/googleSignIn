@@ -1,21 +1,39 @@
 <html>
-    <head>
-        <script src="https://accounts.google.com/gsi/client" async defer></script>
-    </head>
-    <body>
-        <div id="g_id_onload"
-         data-client_id="22819640695-p9n34v3busmlh9bduu6sbdh6vrpgok7u.apps.googleusercontent.com"
-         data-login_uri="https://eventmanager32.herokuapp.com/"
-         data-auto_prompt="false">
-      </div>
-      <div class="g_id_signin"
-         data-type="standard"
-         data-size="large"
-         data-theme="outline"
-         data-text="sign_in_with"
-         data-shape="rectangular"
-         data-logo_alignment="left">
-      </div>
 
-    </body>
+<head>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+
+<body>
+    <div id="g_id_onload" data-client_id="22819640695-p9n34v3busmlh9bduu6sbdh6vrpgok7u.apps.googleusercontent.com"
+        data-auto_prompt="false" data-callback="handleCredentialResponse">
+    </div>
+    <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" data-text="sign_in_with"
+        data-shape="rectangular" data-logo_alignment="left">
+    </div>
+    <script>
+        import * as jose from "jose";
+        function handleCredentialResponse(response) {
+            // decodeJwtResponse() is a custom function defined by you
+            // to decode the credential response.
+            const responsePayload = decodeJwtResponse(response.credential);
+
+            console.log("ID: " + responsePayload.sub);
+            console.log('Full Name: ' + responsePayload.name);
+            console.log('Given Name: ' + responsePayload.given_name);
+            console.log('Family Name: ' + responsePayload.family_name);
+            console.log("Image URL: " + responsePayload.picture);
+            console.log("Email: " + responsePayload.email);
+        }
+
+        function decodeJwtResponse(credential) {
+            const jwt = credential;
+            return { payload, protectedHeader } = await jose.jwtVerify(jwt, publicKey, {
+                issuer: 'urn:example:issuer',
+                audience: 'urn:example:audience'
+            });
+        }
+    </script>
+</body>
+
 </html>
