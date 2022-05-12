@@ -1,4 +1,5 @@
 var express = require('express');
+var http = require('http');
 const { route } = require('express/lib/application');
 var path = require('path');
 var app = express();
@@ -26,6 +27,8 @@ app.post("/", (req, res) => {
 
 var server_host = '0.0.0.0';
 
-app.listen(server_port, server_host, () => {
+http.createServer((req, res) => {
+    res.setHeader("Content-Type", "text/html");
+}).listen(server_port, server_host, () => {
     console.log("Server running on port " + server_port);
 });
