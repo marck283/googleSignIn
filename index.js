@@ -1,4 +1,5 @@
 var express = require('express');
+var path = require('path');
 var app = express();
 
 var port = 3000;
@@ -9,12 +10,12 @@ app.use(express.json());
 
 app.get("/", (req, res) => {
     console.log("GET request received on port " + port);
-    res.send("./signin.html");
+    res.sendFile("signin.html");
 });
 
 app.post("/", (req, res) => {
     console.log("POST request received on port " + port);
-    res.send("./signin.html");
+    res.sendFile(path.join("/", "signin.html"));
 })
 
 app.listen(3000, () => {
