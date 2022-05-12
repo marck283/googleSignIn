@@ -1,5 +1,4 @@
 var express = require('express');
-var http = require('http');
 var app = express();
 
 var port = 3000;
@@ -18,6 +17,6 @@ app.post("/", (req, res) => {
     res.send("./signin.html");
 })
 
-http.createServer(app).listen((req, res) => {
+app.listen((req, res) => {
     console.log("Server running on port " + port);
 });
