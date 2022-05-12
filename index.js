@@ -1,0 +1,12 @@
+var express = require('express');
+var http = require('http');
+var app = express();
+
+var port = 3000;
+
+app.get("/", (req, res) => {
+    console.log("GET request received in port " + port);
+    res.send("./signin.html");
+});
+
+var server = http.createServer().listen(port);
