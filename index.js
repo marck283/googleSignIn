@@ -10,7 +10,7 @@ app.use(express.json());
 
 app.get("/", (req, res) => {
     console.log("GET request received in port " + port);
-    res.sendFile(".signin.html");
+    res.sendFile("./signin.html");
 });
 
 http.createServer(app).listen((req, res) => {
