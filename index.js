@@ -15,10 +15,6 @@ app.get("/", (req, res) => {
     res.sendFile(path.resolve("./signin.html"));
 });
 
-app.use("/scripts", (req, res) => {
-    res.sendFile("./signIn.js");
-});
-
 app.post("/", (req, res) => {
     console.log("POST request received on port " + server_port);
     res.sendFile(path.resolve("./signin.html"));
