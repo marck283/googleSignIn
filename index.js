@@ -1,4 +1,5 @@
 var express = require('express');
+const { route } = require('express/lib/application');
 var path = require('path');
 var app = express();
 
@@ -15,7 +16,6 @@ app.get("/", (req, res) => {
 
 app.post("/", (req, res) => {
     console.log("POST request received on port " + server_port);
-    res.sendFile(path.resolve("./scripts/signIn.js"));
     res.sendFile(path.resolve("./signin.html"));
 });
 
