@@ -17,6 +17,6 @@ app.post("/", (req, res) => {
     res.send("./signin.html");
 })
 
-app.listen((req, res) => {
+app.listen(3000, () => {
     console.log("Server running on port " + port);
 });
