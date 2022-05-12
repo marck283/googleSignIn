@@ -9,4 +9,6 @@ app.get("/", (req, res) => {
     res.send("./signin.html");
 });
 
-var server = http.createServer().listen(port);
+var server = http.createServer(options, app).listen((req, res) => {
+    console.log("Server running on port " + port);
+});
