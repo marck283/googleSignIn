@@ -6,17 +6,18 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+var server_port = process.env.PORT || 3000;
+
 app.get("/", (req, res) => {
-    console.log("GET request received on port " + port);
+    console.log("GET request received on port " + server_port);
     res.sendFile(path.resolve("./signin.html"));
 });
 
 app.post("/", (req, res) => {
-    console.log("POST request received on port " + port);
+    console.log("POST request received on port " + server_port);
     res.sendFile(path.resolve("./signin.html"));
 });
 
-var server_port = process.env.PORT || 3000;
 var server_host = '0.0.0.0';
 
 app.listen(server_port, server_host, () => {
