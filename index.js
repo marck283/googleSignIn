@@ -6,9 +6,9 @@ var port = 3000;
 
 app.get("/", (req, res) => {
     console.log("GET request received in port " + port);
-    res.send("./signin.html");
+    res.sendFile(".signin.html");
 });
 
-http.createServer(options, app).listen((req, res) => {
+http.createServer(app).listen((req, res) => {
     console.log("Server running on port " + port);
 });
