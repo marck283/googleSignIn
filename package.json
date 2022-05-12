@@ -1,0 +1,19 @@
+{
+  "name": "googlesignin",
+  "version": "1.0.0",
+  "description": "A Google Sign In implementation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marck283/googleSignIn.git"
+  },
+  "author": "Marco Lasagna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marck283/googleSignIn/issues"
+  },
+  "homepage": "https://github.com/marck283/googleSignIn#readme"
+}
