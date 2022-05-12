@@ -6,7 +6,7 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-var server_port = process.env.PORT || 3000;
+var server_port = process.env.PORT || 3000; //This binds Heku's $PORT variable to the app's running port
 
 app.get("/", (req, res) => {
     console.log("GET request received on port " + server_port);
