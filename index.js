@@ -10,12 +10,12 @@ app.use(express.json());
 
 app.get("/", (req, res) => {
     console.log("GET request received on port " + port);
-    res.sendFile(path.join("/", "signin.html"));
+    res.sendFile(path.resolve("./signin.html"));
 });
 
 app.post("/", (req, res) => {
     console.log("POST request received on port " + port);
-    res.sendFile(path.join("/", "signin.html"));
+    res.sendFile(path.resolve("./signin.html"));
 })
 
 app.listen(3000, () => {
