@@ -16,7 +16,6 @@ app.get("/", (req, res) => {
 });
 
 app.use("/scripts", (req, res) => {
-    res.setHeader("Content-Type", "text/javascript");
     res.sendFile("./signIn.js");
 });
 
