@@ -10,7 +10,7 @@ app.use(express.json());
 
 app.get("/", (req, res) => {
     console.log("GET request received on port " + port);
-    res.sendFile("signin.html");
+    res.sendFile(path.join("/", "signin.html"));
 });
 
 app.post("/", (req, res) => {
