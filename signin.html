@@ -11,11 +11,8 @@
     <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" data-text="sign_in_with"
         data-shape="rectangular" data-logo_alignment="left">
     </div>
-    <script>
-        import * as signin from "scripts/signIn.mjs"
+    <script src="./scripts/signIn.js">
         function handleCredentialResponse(response) {
-            // decodeJwtResponse() is a custom function defined by you
-            // to decode the credential response.
             const responsePayload = decodeJwtResponse(response.credential).payload;
 
             console.log("ID: " + responsePayload.sub);
