@@ -11,6 +11,8 @@
     <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" data-text="sign_in_with"
         data-shape="rectangular" data-logo_alignment="left">
     </div>
+
+    <!-- Perché Heroku non esegue il linking della risorsa, dicendo che la risorsa non esiste come "scripts/signIn.js"? -->
     <script src="./scripts/signIn.js">
         function handleCredentialResponse(response) {
             const responsePayload = decodeJwtResponse(response.credential).payload;
