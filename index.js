@@ -16,8 +16,11 @@ app.get("/", (req, res) => {
 app.post("/", (req, res) => {
     console.log("POST request received on port " + port);
     res.sendFile(path.resolve("./signin.html"));
-})
+});
 
-app.listen(3000, () => {
-    console.log("Server running on port " + port);
+var server_port = process.env.port || port;
+var server_host = '0.0.0.0';
+
+app.listen(server_port, server_host, () => {
+    console.log("Server running on port " + server_port);
 });
