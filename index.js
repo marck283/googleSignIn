@@ -26,8 +26,6 @@ app.post("/", (req, res) => {
 
 var server_host = '0.0.0.0';
 
-http.createServer((req, res) => {
-    res.setHeader("Content-Type", "text/html");
-}).listen(server_port, server_host, () => {
+app.listen(server_port, server_host, () => {
     console.log("Server running on port " + server_port);
 });
